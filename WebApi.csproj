@@ -80,7 +80,7 @@
     <Compile Include="Middleware\ApiIndexPage\ApiIndexPageOptions.cs" />
     <Compile Include="Middleware\ApiIndexPage\ApiIndexPageView.cs" />
     <Compile Include="Core\BaseMiddlewareView.cs" />
-    <Compile Include="Middleware\SampleMiddleware.cs" />
+    <Compile Include="Middleware\ApiMiddleware.cs" />
     <Compile Include="Api\TimeTicks.cs" />
     <Compile Include="Service\ApiService.cs" />
     <Page Include="MainWindow.xaml">

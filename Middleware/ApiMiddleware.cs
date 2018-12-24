@@ -3,13 +3,13 @@ using Microsoft.Owin;
 
 namespace WebApi
 {
-    internal class SampleMiddleware : OwinMiddleware
+    internal class ApiMiddleware : OwinMiddleware
     {
         /// <summary>
         /// Instantiates the middleware with an optional pointer to the next component.
         /// </summary>
         /// <param name="next"></param>
-        public SampleMiddleware(OwinMiddleware next) : base(next)
+        public ApiMiddleware(OwinMiddleware next) : base(next)
         {
        
         }

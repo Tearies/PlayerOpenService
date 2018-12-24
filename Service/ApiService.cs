@@ -27,7 +27,7 @@ namespace WebApi
             {
                 Console.WriteLine("Sample Middleware loaded...");
                 p.UseApiIndexPage();
-                p.Use<SampleMiddleware>();
+                p.Use<ApiMiddleware>();
 
             });
         }
