@@ -73,14 +73,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Api\ApiAttribute.cs" />
-    <Compile Include="Api\ApiFactory.cs" />
-    <Compile Include="Api\APiMethodInfo.cs" />
-    <Compile Include="Api\ApiVersions.cs" />
-    <Compile Include="Api\HttpMethods.cs" />
+    <Compile Include="Core\ApiAttribute.cs" />
+    <Compile Include="Core\ApiFactory.cs" />
+    <Compile Include="Core\APiMethodInfo.cs" />
+    <Compile Include="Core\ApiVersions.cs" />
+    <Compile Include="Core\HttpMethods.cs" />
     <Compile Include="Api\Index.cs" />
-    <Compile Include="SampleMiddleware.cs" />
+    <Compile Include="Middleware\ApiIndexPage\ApiIndexPageExtensions.cs" />
+    <Compile Include="Middleware\ApiIndexPageMiddleware.cs" />
+    <Compile Include="Middleware\ApiIndexPage\ApiIndexPageOptions.cs" />
+    <Compile Include="Middleware\ApiIndexPage\ApiIndexPageView.cs" />
+    <Compile Include="Core\BaseMiddlewareView.cs" />
+    <Compile Include="Middleware\SampleMiddleware.cs" />
     <Compile Include="Api\TimeTicks.cs" />
+    <Compile Include="Service\ApiService.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

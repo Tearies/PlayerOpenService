@@ -15,7 +15,7 @@ namespace WebApi
     {
         public static ApiFactory Factory = new Lazy<ApiFactory>(() => new ApiFactory()).Value;
         private Dictionary<PathString, List<APiMethodInfo>> ApiCaches;
-        List<string> result = new List<string>();
+       public List<string> ApiIndexList = new List<string>();
         private string allApis = string.Empty;
         private ApiFactory()
         {
@@ -54,7 +54,7 @@ namespace WebApi
 
                                     }
           
-                                    result.Add($"{key} /*Parameters:({pars}) HttpMethod:{methodApi.HttpMethod} Description:{methodApi.Description}*/");
+                                    ApiIndexList.Add($"{key} /*Parameters:({pars}) HttpMethod:{methodApi.HttpMethod} Description:{methodApi.Description}*/");
                                 }
                             }
                         }
@@ -62,8 +62,8 @@ namespace WebApi
                 }
             }
           
-            allApis= JsonConvert.SerializeObject(result);
-            result.Clear();
+            allApis= JsonConvert.SerializeObject(ApiIndexList);
+        
         }
 
         public const string Preix = "/api";

@@ -26,39 +26,16 @@ namespace WebApi
         public MainWindow()
         {
             InitializeComponent();
-            Loaded += MainWindow_Loaded;
-        }
-
-        private IDisposable webservice { get; set; }
-        private StartOptions options { get; set; }
-     
-        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
-        {
-            options = new StartOptions();
-            options.Urls.Add("http://+:9000");
-            options.Urls.Add("http://+:9001");
-         
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            webservice = WebApp.Start(options, (p) =>
-            {
-                Console.WriteLine("Sample Middleware loaded...");
-#if DEBUG
-                p.UseErrorPage();
-#endif
-                p.UseWelcomePage();
-                p.Use<SampleMiddleware>();
-            
-            });
-           
-
+            ApiService.Factory.Start();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            webservice?.Dispose();
+            ApiService.Factory.Stop();
         }
     }
 }
