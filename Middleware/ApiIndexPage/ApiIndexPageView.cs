@@ -16,6 +16,7 @@ namespace WebApi
             this.Write($"{ApiFactory.ServiceName}");
             this.WriteLiteral("</title>\r\n");
             this.WriteLiteral("<style>*{user-select: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; cursor: default;}  #vertext{text-align:right;} #verheader{font-size:20px; color:#f00; } #headertext{text-align:center;} #header{font-size:24px; } #api{font-size:16px;color: #111; cursor: pointer;} #api:hover{color: #0088ff;} #api:active{color: #0088ff;}</style>");
+            this.WriteLiteral("</head>");
             this.WriteLiteral("<body>");
             this.WriteLiteral($"<div id='header'><H1 id='headertext'>{ApiFactory.ServiceName}</H1></div>");
             this.WriteLiteral($"<div id='verheader'><H4 id='vertext'>version:{ApiFactory.ApiVer}</H4></div>");
@@ -25,6 +26,7 @@ namespace WebApi
                 this.WriteLiteral($"<div id='api'>{offset++}.{api}</div>");
             }
             this.WriteLiteral("</body>");
+            this.WriteLiteral("</html>");
         }
     }
 }
