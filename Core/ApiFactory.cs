@@ -67,8 +67,8 @@ namespace WebApi
         }
 
         public const string Preix = "/api";
-        
-
+        public const string ServiceName = "VBI Open Service Controller";
+        public const string ApiVer = "1.0";
 
         public Task Invoke(IOwinContext context)
         {

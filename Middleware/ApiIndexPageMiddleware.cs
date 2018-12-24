@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.Owin;
-using Microsoft.Owin.Diagnostics;
+
 
 namespace WebApi
 {
@@ -30,12 +30,16 @@ namespace WebApi
         /// <returns></returns>
         public Task Invoke(IDictionary<string, object> environment)
         {
-            IOwinContext context = (IOwinContext)new OwinContext(environment);
+            IOwinContext context = new OwinContext(environment);
             IOwinRequest request = context.Request;
-            if (this._options.Path.HasValue && !(this._options.Path == request.Path))
-                return this._next(environment);
-            new ApiIndexPageView().Execute(context);
-            return (Task)Task.FromResult<int>(0);
+            if (!_options.Path.HasValue || _options.Path == request.Path)
+            {
+                var welcomePage = new ApiIndexPageView();
+                welcomePage.Execute(context);
+                return Task.FromResult(0);
+            }
+
+            return _next(environment);
         }
     }
 }

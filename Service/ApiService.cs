@@ -26,9 +26,6 @@ namespace WebApi
             webservice = WebApp.Start(options, (p) =>
             {
                 Console.WriteLine("Sample Middleware loaded...");
-#if DEBUG
-                p.UseErrorPage();
-#endif
                 p.UseApiIndexPage();
                 p.Use<SampleMiddleware>();
 
